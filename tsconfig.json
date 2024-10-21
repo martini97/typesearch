@@ -1,0 +1,22 @@
+{
+  "include": ["src"],
+  "exclude": ["**/*.test.ts"],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "declaration": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "isolatedDeclarations": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  }
+}

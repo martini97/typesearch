@@ -1,11 +1,32 @@
 {
   "name": "typesearch",
+  "type": "module",
   "version": "0.0.0",
   "description": "Integrate Typeorm with Elasticsearch",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
+  "keywords": ["typescript", "library", "typeorm", "elasticsearch"],
   "author": "Alessandro Martini <martini97@protonmail.ch>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martini97/typesearch"
+  },
+  "bugs": {
+    "url": "https://github.com/martini97/typesearch/issues"
+  },
+  "homepage": "https://github.com/martini97/typesearch#readme",
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  }
 }
