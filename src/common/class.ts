@@ -1,3 +1,1 @@
-export interface Class<T> extends Function {
-  new (...args: any[]): T;
-}
+export type Class<T> = abstract new (...args: unknown[]) => T;

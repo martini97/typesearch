@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 export {};
 
 import type { MetadataStorage } from "src/metadata/storage";

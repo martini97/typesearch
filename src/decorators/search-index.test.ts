@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-extraneous-class */
+
 import { describe, it, beforeEach, expect } from "vitest";
 
 import { MetadataStorage } from "../metadata/storage";

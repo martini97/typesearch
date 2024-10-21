@@ -8,7 +8,7 @@ type SearchEntityOpts = {
 export function SearchEntity(options?: SearchEntityOpts): ClassDecorator {
   return function (target) {
     const name = options?.name ?? target.name;
-    const targetCls = target as unknown as Class<any>;
+    const targetCls = target as unknown as Class<unknown>;
     getMetadataStorage().addSearchEntity({ name, target: targetCls });
   };
 }

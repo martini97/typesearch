@@ -1,6 +1,6 @@
 import type { Class } from "src/common/class";
 
-type EntityTarget = { name: string; target: Class<any> };
+type EntityTarget = { name: string; target: Class<unknown> };
 
 export class MetadataStorage {
   private readonly entities: EntityTarget[] = [];

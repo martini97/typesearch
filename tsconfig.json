@@ -1,5 +1,6 @@
 {
   "include": ["src"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -16,6 +17,8 @@
     "skipLibCheck": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowJs": true,
+    "checkJs": true,
     "outDir": "dist",
     "rootDir": "src",
     "paths": {
