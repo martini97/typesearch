@@ -1,0 +1,11 @@
+{
+  "name": "typesearch",
+  "version": "0.0.0",
+  "description": "Integrate Typeorm with Elasticsearch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alessandro Martini <martini97@protonmail.ch>",
+  "license": "MIT"
+}
