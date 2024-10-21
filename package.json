@@ -13,7 +13,8 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "lint:tsc": "tsc --noEmit --project tsconfig.json"
   },
   "keywords": [
     "typescript",
