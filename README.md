@@ -1,5 +1,7 @@
 # typesearch
 
+[![ci](https://github.com/martini97/typesearch/actions/workflows/ci.yml/badge.svg)](https://github.com/martini97/typesearch/actions/workflows/ci.yml)
+
 Integration between typeorm and elasticsearch.
 
 > [!WARNING]
