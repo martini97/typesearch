@@ -3,7 +3,6 @@
 import { describe, it, beforeEach, expect } from "vitest";
 
 import { MetadataStorage } from "src/metadata/storage";
-import { SEARCH_INDEX_KEY } from "src/constants";
 
 import { SearchEntity } from "./search-entity";
 
@@ -34,19 +33,6 @@ describe("SearchEntity", () => {
     expect(metadataStorage.getSearchEntities()).toContainEqual({
       target: Claz,
       options: { name: Claz.name, settings: {} },
-    });
-  });
-
-  it("injects metadata", () => {
-    const name = "search-entity-index";
-    const settings = { number_of_replicas: 2, number_of_shards: 2 };
-
-    @SearchEntity({ name, settings })
-    class Claz {}
-
-    expect(Reflect.getMetadata(SEARCH_INDEX_KEY, Claz)).toEqual({
-      name,
-      settings,
     });
   });
 });

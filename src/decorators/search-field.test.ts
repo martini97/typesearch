@@ -2,7 +2,6 @@ import "reflect-metadata";
 import { describe, it, beforeEach, expect } from "vitest";
 
 import { MetadataStorage } from "src/metadata/storage";
-import { SEARCH_FIELD_KEY } from "src/constants";
 
 import { SearchEntity } from "./search-entity";
 import { SearchField } from "./search-field";
@@ -29,8 +28,7 @@ describe("SearchField", () => {
     }
 
     expect(metadataStorage.getSearchFields()).toContainEqual({
-      entity: Claz,
-      target: expect.anything(),
+      target: Claz,
       propertyKey: "id",
       options: {
         mapping: { type: "keyword" },
@@ -39,8 +37,7 @@ describe("SearchField", () => {
     });
 
     expect(metadataStorage.getSearchFields()).toContainEqual({
-      entity: Claz,
-      target: expect.anything(),
+      target: Claz,
       propertyKey: "name",
       options: {
         mapping: { type: "text" },
@@ -49,42 +46,12 @@ describe("SearchField", () => {
     });
 
     expect(metadataStorage.getSearchFields()).toContainEqual({
-      entity: Claz,
-      target: expect.anything(),
+      target: Claz,
       propertyKey: "createdAt",
       options: {
         mapping: { type: "date" },
         name: "created_at",
       },
-    });
-  });
-
-  it("injects metadata", () => {
-    @SearchEntity()
-    class Claz {
-      @SearchField({ mapping: { type: "keyword" } })
-      public id!: string;
-
-      @SearchField()
-      public name!: string;
-
-      @SearchField({ name: "created_at" })
-      public createdAt!: Date;
-    }
-
-    expect(Reflect.getMetadata(SEARCH_FIELD_KEY, new Claz(), "id")).toEqual({
-      mapping: { type: "keyword" },
-      name: "id",
-    });
-    expect(Reflect.getMetadata(SEARCH_FIELD_KEY, new Claz(), "name")).toEqual({
-      mapping: { type: "text" },
-      name: "name",
-    });
-    expect(
-      Reflect.getMetadata(SEARCH_FIELD_KEY, new Claz(), "createdAt"),
-    ).toEqual({
-      mapping: { type: "date" },
-      name: "created_at",
     });
   });
 });

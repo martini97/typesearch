@@ -11,7 +11,6 @@ export function SearchField(options?: SearchFieldOpts): PropertyDecorator {
 
     getMetadataStorage().addSearchField(
       target.constructor as Class<unknown>,
-      target,
       propertyKey,
       { ...options, mapping, name },
     );
