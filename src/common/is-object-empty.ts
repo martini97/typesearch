@@ -1,8 +1,10 @@
 export function isObjEmpty<T extends object>(
   obj: T | undefined | null,
 ): boolean {
-  return Boolean(
-    obj && Object.keys(obj).length === 0 && obj.constructor === Object,
+  return (
+    !obj ||
+    (Array.isArray(obj) && obj.length === 0) ||
+    Boolean(obj && Object.keys(obj).length === 0 && obj.constructor === Object)
   );
 }
 
